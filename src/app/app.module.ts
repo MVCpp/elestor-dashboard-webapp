@@ -7,6 +7,8 @@ import { NegociosComponent } from './negocios/negocios.component';
 import { PedidosComponent } from './pedidos/pedidos.component';
 import { AboutComponent } from './about/about.component';
 import { CuponesComponent } from './cupones/cupones.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { CuponesComponent } from './cupones/cupones.component';
     NegociosComponent,
     PedidosComponent,
     AboutComponent,
-    CuponesComponent
+    CuponesComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
