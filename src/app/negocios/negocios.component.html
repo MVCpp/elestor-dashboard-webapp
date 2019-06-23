@@ -5,23 +5,62 @@
       <thead>
         <tr>
           <th>#</th>
-          <th>Firstname</th>
-          <th>Lastname</th>
-          <th>Age</th>
-          <th>City</th>
-          <th>Country</th>
+          <th>clientid</th>
+          <th>negocioid</th>
+          <th>nombre</th>
+          <th>callenumero</th>
+          <th>colonia</th>
+          <th>estado</th>
+          <th>codigopostal</th>
+          <th>horaapertura</th>
+          <th>horacierre</th>
+          <th>categoria</th>
+          <th>subcategoria</th>
+          <th>descripcion</th>
+          <th>latitud</th>
+          <th>longitud</th>
+          <th>estatus</th>
        </tr>
       </thead>
       <tbody>
-        <tr>
+        <tr *ngFor="let negocio of negocioModel">
           <td>1</td>
-          <td>Anna</td>
-          <td>Pitt</td>
-          <td>35</td>
-          <td>New York</td>
-          <td>USA</td>
+          <td>{{negocio.clientid}}</td>
+          <td>{{negocio.negocioid}}</td>
+          <td>{{negocio.nombre}}</td>
+          <td>{{negocio.callenumero}}</td>
+          <td>{{negocio.colonia}}</td>
+          <td>{{negocio.estado}}</td>
+          <td>{{negocio.codigopostal}}</td>
+          <td>{{negocio.horaapertura}}</td>
+          <td>{{negocio.horacierre}}</td>
+          <td>{{negocio.categoria}}</td>
+          <td>{{negocio.subcategoria}}</td>
+          <td>{{negocio.descripcion}}</td>
+          <td>{{negocio.latitud}}</td>
+          <td>{{negocio.longitud}}</td>
+          <td>{{negocio.active}}</td>
         </tr>
       </tbody>
     </table>
     </div>
   </div>
+
+  <!-- public string clientid{get; set;} = string.Empty;
+  public string negocioid { get; set; } = string.Empty;
+  public string nombre {get; set;} = string.Empty;
+  public string callenumero {get; set;} = string.Empty;
+  public string colonia {get; set;} = string.Empty;
+  public string ciudad {get; set;} = string.Empty;
+  public string estado {get; set;} = string.Empty;
+  public string codigopostal {get; set;} = string.Empty;
+  public string horaapertura {get; set;} = string.Empty;
+  public string horacierre {get; set;} = string.Empty;
+  public string categoria {get; set;} = string.Empty;
+  public string subcategoria { get; set; } = string.Empty;
+  public string FK_subcategoria{get; set;} = string.Empty;
+  public string descripcion {get; set;} = string.Empty;
+  public string latitud { get; set; } = string.Empty;
+  public string longitud { get; set; } = string.Empty;
+  public int active { get; set; } = 1; -->
+ 

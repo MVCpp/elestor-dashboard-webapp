@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireDatabase } from '@angular/fire/database';
 
 @Component({
   selector: 'app-pedidos',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PedidosComponent implements OnInit {
 
-  constructor() { }
+  constructor(private afdb: AngularFireDatabase) { }
 
   ngOnInit() {
+    debugger
+      this.afdb.list("pedidos").snapshotChanges().subscribe(data=>{
+        data.map(data=>{
+          debugger
+          let info = data.payload.val();
+          
+        });
+      });
   }
 
 }
