@@ -12,12 +12,10 @@ export class NegociosComponent implements OnInit {
   negocioModel: Negocio[];
 
   constructor(public api: BackendApiService) 
-  {
-    debugger
+  {    
   }
 
   ngOnInit() {
-    debugger
     this.getNegocios();
   }
 
@@ -27,10 +25,7 @@ export class NegociosComponent implements OnInit {
       (data: Negocio[]) => {
         if(data[0] !== null && data[0] !== undefined)
         {
-          debugger;
-
           this.negocioModel = data;
-            
             if(data.length == 0)
             {
               

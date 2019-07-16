@@ -10,15 +10,13 @@ export class PedidosComponent implements OnInit {
 
   constructor(private afdb: AngularFireDatabase) { }
 
-  ngOnInit() {
-    debugger
+  ngOnInit() {    
       this.afdb.list("pedidos").snapshotChanges().subscribe(data=>{
         data.map(data=>{
-          debugger
+
           let info = data.payload.val();
-          
+
         });
       });
   }
-
 }
