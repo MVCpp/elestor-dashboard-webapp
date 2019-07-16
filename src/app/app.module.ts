@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { fireBaseConfig } from '../config';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { LoadingScreenComponent } from './loading-screen/loading-screen.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
     AboutComponent,
     CuponesComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    LoadingScreenComponent
   ],
   imports: [
     BrowserModule,

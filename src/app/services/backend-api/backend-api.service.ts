@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { catchError, map, tap } from 'rxjs/operators';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import {Negocio} from  '../models/negocio.model'
+import {Negocio} from  '../../models/negocio.model'
 import { Observable } from 'rxjs';
 
 

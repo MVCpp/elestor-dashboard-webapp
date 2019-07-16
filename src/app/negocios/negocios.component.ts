@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BackendApiService } from '../services/backend-api.service';
+import { BackendApiService } from '../services/backend-api/backend-api.service';
 import { Negocio } from '../models/negocio.model';
 
 @Component({
