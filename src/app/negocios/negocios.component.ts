@@ -44,4 +44,9 @@ export class NegociosComponent implements OnInit {
          console.log(error)
         });
   }
+
+  verEnMaps(biz, $event){
+    var win = window.open('https://www.google.com/maps/@'+ biz.latitud+','+ biz.longitud+',981m/data=!3m1!1e3', '_blank');
+    win.focus();
+  }
 }

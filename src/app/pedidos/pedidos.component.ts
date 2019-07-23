@@ -8,14 +8,15 @@ import { AngularFireDatabase } from '@angular/fire/database';
 })
 export class PedidosComponent implements OnInit {
 
+  public pedidos = [];
   constructor(private afdb: AngularFireDatabase) { }
 
   ngOnInit() {    
       this.afdb.list("pedidos").snapshotChanges().subscribe(data=>{
         data.map(data=>{
-
           let info = data.payload.val();
-
+          this.pedidos.push(info);
+          debugger
         });
       });
   }
