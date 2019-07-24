@@ -1,19 +1,35 @@
 <div class="container">
-    <!-- <h2 style="text-align: center; color: red">Negocios</h2> -->
+  <h2 style="text-align: center; color: red">Negocios</h2>
+    <div class="table-responsive row">
+        <div class="column">
+          <label>
+              Categorias 
+          </label>
+        </div>
+        <div class="column">
+            <select class="SelectStyle" (change)="filtrarNegocios($event)">
+                <option value="-6">Todas</option>
+                <option [value]="cat.descripcion" *ngFor="let cat of catnegocio">
+                  {{cat.descripcion}}
+                </option>
+              </select>
+        </div>
+      </div>
     <div class="table-responsive">         
-    <table class="roundedCorners">
+    <!-- <table class="roundedCorners"> -->
+      <table>
       <thead>
         <tr>
-          <th>nombre</th>
-          <th>callenumero</th>
-          <th>colonia</th>
-          <th>estado</th>
-          <th>codigopostal</th>
-          <th>horaapertura</th>
-          <th>horacierre</th>
-          <th>categoria</th>
-          <th>subcategoria</th>
-          <th>descripcion</th>
+          <th>Nombre</th>
+          <th>Calle #</th>
+          <th>Colonia</th>
+          <th>Estado</th>
+          <th>CP</th>
+          <th>Hora Apertura</th>
+          <th>Hora Cierre</th>
+          <th>Categoria</th>
+          <th>Subcategoria</th>
+          <th>Descripcion</th>
           <th>Ver en Google Maps</th>
        </tr>
       </thead>

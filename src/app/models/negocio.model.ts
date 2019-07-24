@@ -27,3 +27,15 @@ export class Negocio {
   }
 
 }
+
+export class CatNegocio
+{
+   id_catNegocio:number = -1;
+   nombre:string = "";
+   descripcion:string = "";
+
+   constructor()
+  {
+
+  }
+}
