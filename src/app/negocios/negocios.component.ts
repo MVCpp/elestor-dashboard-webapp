@@ -13,10 +13,9 @@ export class NegociosComponent implements OnInit {
 
   negocioModel: Negocio[];
   catnegocio: CatNegocio[];
-  filteredNeg:Negocio[];
+  filteredNeg: Negocio[];
 
-  constructor(public api: BackendApiService) 
-  {    
+  constructor(public api: BackendApiService) {
   }
 
   ngOnInit() {
@@ -24,69 +23,61 @@ export class NegociosComponent implements OnInit {
     this.getCatNegocio();
   }
 
-  getNegocios()
-  {
+  async getNegocios() {
     this.api.obtenerNegocio().subscribe(
       (data: Negocio[]) => {
-        if(data[0] !== null && data[0] !== undefined)
-        {
+        if (data[0] !== null && data[0] !== undefined) {
           this.negocioModel = data;
-          debugger
-            if(data.length == 0)
-            {
-              
-            }
-            else
-            {
+          if (data.length === 0) {
+
+            } else {
 
             }
-        }
-        else
-        {
-      
+        } else {
+
         }
       },
        (error: any) =>  {
-         console.log(error)
+         console.log(error);
         });
   }
 
-  getCatNegocio()
-  {
+  async getCatNegocio() {
     this.api.getCatNegocio().subscribe(
       (data: CatNegocio[]) => {
-      if(data !== null)
-        {
-          this.catnegocio = data;     
-        }
-      else
-      {
-        
+      if (data !== null) {
+          this.catnegocio = data;
+        } else {
+
       }
       },
         (error: any) => {
-      
+
       });
   }
 
-  verEnMaps(biz, $event){
-    var win = window.open('https://www.google.com/maps/@'+ biz.latitud+','+ biz.longitud+',981m/data=!3m1!1e3', '_blank');
+  verEnMaps(biz, $event) {
+    const win = window.open('https://www.google.com/maps/@' + biz.latitud + ',' + biz.longitud + ',981m/data=!3m1!1e3', '_blank');
     win.focus();
   }
 
-  filtrarNegocios($event){
-    let descripcion = $event.target.value;
+  async filtrarNegocios($event) {
+    const descripcion = $event.target.value;
 
-      // this.getNegocios();
+    this.api.obtenerNegocio().subscribe(
+      (data: Negocio[]) => {
+        this.negocioModel = data;
+        if (descripcion === '-6') {
 
-      if(descripcion === '-6'){
-        
-      }else{
-        this.filteredNeg = this.negocioModel.filter(
-          cat => cat.categoria === descripcion
-        );  
-        this.negocioModel = this.filteredNeg;      
-    }
-    debugger
+        } else {
+          this.filteredNeg = this.negocioModel.filter(
+            cat => cat.categoria === descripcion
+          );
+          this.negocioModel = this.filteredNeg;
+      }
+      },
+       (error: any) =>  {
+         console.log(error);
+        });
   }
 }
