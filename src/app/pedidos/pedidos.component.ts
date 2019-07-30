@@ -16,7 +16,6 @@ export class PedidosComponent implements OnInit {
         data.map(data=>{
           let info = data.payload.val();
           this.pedidos.push(info);
-          debugger
         });
       });
   }
